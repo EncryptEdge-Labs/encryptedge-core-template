@@ -5,32 +5,33 @@
 
 ---
 
-## Investigation Summary
-<!-- 3–5 sentences for a non-technical reader or senior analyst.
-     What was investigated? What was found? What decision was made?
-     Example: "An authentication alert triggered by a suspected brute-force attack was investigated.
-     Analysis confirmed malicious activity originating from an external IP across three user accounts.
-     Two accounts were compromised. Escalation to Tier-2 is recommended with immediate password reset." -->
+## Executive Summary
+<!-- 3–5 sentences written for a non-technical reader.
+     What was tested? What was found? What is the business risk?
+     Example: "A security assessment of [target] was conducted to identify exploitable weaknesses.
+     Two critical vulnerabilities were discovered that could allow an attacker to gain full system
+     access without authentication. Immediate remediation is recommended." -->
 
 ---
 
-## Investigation Scope
+## Scope & Rules of Engagement
 
 | Item | Detail |
 |---|---|
-| Alert / Task Type | [Alert Triage / Log Analysis / Traffic Analysis / Incident Simulation] |
-| Data Sources Used | e.g. Windows Event Logs, Syslog, SIEM, PCAP, EDR Alerts |
-| Time Range Analysed | YYYY-MM-DD HH:MM to YYYY-MM-DD HH:MM |
-| Systems / Accounts in Scope | |
-| Lab Platform | [Splunk / ELK / LimaCharlie / Wazuh / TryHackMe / HackTheBox] |
-| Task Objective | [Copy from task description — one sentence] |
+| Target | |
+| IP / URL / System | |
+| Testing Type | [Black Box / Grey Box / White Box] |
+| Authorized By | EncryptEdge Labs Lab Environment |
+| Tools Permitted | |
+| Out of Scope | |
+| Lab Platform | [TryHackMe / HackTheBox / DVWA / Custom] |
 
 ---
 
 ## Environment Setup
-<!-- How did you set up or access the environment for this task?
-     Include: SIEM platform, log source, dataset loaded, tools used.
-     Another intern must be able to reproduce your setup from these steps. -->
+<!-- Step-by-step: how did you set up your environment to complete this task?
+     Include: OS, tools installed, VPN/lab connection, target configuration.
+     Another intern must be able to reproduce your exact setup from these steps. -->
 
 **Step 1:**
 **Step 2:**
@@ -38,199 +39,178 @@
 
 ---
 
-## Evidence Sources
+## Methodology
+<!-- Which phases did this task cover? Tick all that apply and describe what you did in each. -->
 
-| Source | Type | What It Provided |
-|---|---|---|
-| | Windows Event Log | Authentication events |
-| | Firewall Log | Inbound/outbound traffic |
-| | EDR Alert | Process execution on endpoint |
-| | SIEM Dashboard | Correlated alert view |
-| | PCAP File | Raw network traffic |
+- [ ] **Reconnaissance** — Passive and/or active information gathering
+- [ ] **Enumeration** — Port scanning, service fingerprinting, directory busting
+- [ ] **Vulnerability Identification** — Manual analysis and/or automated scanning
+- [ ] **Exploitation** — Controlled, authorized exploitation of identified weaknesses
+- [ ] **Post-Exploitation** — Privilege escalation, lateral movement, persistence
+- [ ] **Credential Analysis** — Password cracking, hash extraction, credential abuse
+- [ ] **Threat Modeling** — Attack surface mapping, MITRE ATT&CK alignment
 
-<!-- Add or remove rows based on what you actually used. Do not include sources you did not use. -->
-
----
-
-## Investigation Methodology
-
-<!-- Which of these did this task require? Tick all that apply. -->
-
-- [ ] **Alert Triage** — Reviewing alert queue, assessing priority and context
-- [ ] **Log Analysis** — Querying and interpreting raw log data
-- [ ] **Traffic Analysis** — Examining network flows, sessions, or PCAP data
-- [ ] **Timeline Reconstruction** — Building chronological sequence of events
-- [ ] **IOC Validation** — Checking indicators against threat intelligence
-- [ ] **MITRE ATT&CK Mapping** — Linking observed behavior to ATT&CK techniques
-- [ ] **False Positive Analysis** — Determining if alert was benign or malicious
-- [ ] **Escalation Decision** — Deciding whether to close, monitor, or escalate
-
-**Approach:**
-<!-- Describe your actual investigative process. What did you look at first? Why?
-     What hypothesis did you form and how did you test it? -->
+**Methodology Notes:**
+<!-- Describe your actual process — not textbook steps. What did you do first? Why?
+     What decisions did you make and what drove them? -->
 
 ---
 
-## Event Timeline
+## Attack Surface Map
 
-| Timestamp (UTC) | Event | Source | Significance |
-|---|---|---|---|
-| YYYY-MM-DD HH:MM:SS | | | |
-| YYYY-MM-DD HH:MM:SS | | | |
-| YYYY-MM-DD HH:MM:SS | | | |
+| Asset | Type | Port/Protocol | Risk Level | Notes |
+|---|---|---|---|---|
+| | | | | |
+| | | | | |
 
-<!-- Build this from actual log/alert data. Do not approximate timestamps.
-     Significance = why does this event matter to the investigation? -->
+<!-- Add a diagram if the attack surface is complex. Save as diagrams/attack-surface.png -->
 
 ---
 
-## Alert Analysis
+## Findings Summary
 
-<!-- Complete one block per alert or finding. Copy and paste for multiple alerts. -->
+| ID | Title | Severity | CVSS Score | OWASP / CWE | Status |
+|---|---|---|---|---|---|
+| F-01 | | Critical | | | Open |
+| F-02 | | High | | | Open |
+| F-03 | | Medium | | | Open |
 
-### Alert-01 — [Alert Name / Rule Name]
+> **Severity Count:** Critical: __ | High: __ | Medium: __ | Low: __ | Informational: __
+
+---
+
+## Finding Details
+<!-- Repeat this block for each finding. Copy and paste. -->
+
+### F-01 — [Finding Title]
 
 | Field | Detail |
 |---|---|
-| Alert ID / Rule | |
-| Severity | Critical / High / Medium / Low / Informational |
-| Source System | |
-| Triggered By | |
-| Initial Classification | True Positive / False Positive / Benign True Positive |
+| Severity | Critical / High / Medium / Low |
+| CVSS Score | |
+| CVSS Vector | AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H |
+| OWASP Category | e.g. A01:2021 - Broken Access Control |
+| CWE Reference | e.g. CWE-89 |
+| Affected Component | |
+| Affected Endpoint/File | |
 
-**Alert Context:**
-<!-- What was happening when this alert fired? What is the normal baseline?
-     Why is this alert flagged as suspicious rather than normal activity? -->
+**Description:**
+<!-- What is this vulnerability? Explain it simply. -->
 
-**Evidence Supporting Classification:**
-<!-- What specific log entries, traffic patterns, or process behaviors support your conclusion?
-     Quote exact log fields where possible. -->
+**Technical Details:**
+<!-- How does it work technically? What is the root cause? -->
 
+**Proof of Concept:**
+<!-- Step-by-step reproduction. A reviewer must be able to reproduce this exactly.
+     Include commands, payloads, parameters used. -->
 ```
-[Paste relevant log entry, query result, or event data here]
+[commands / payloads used]
 ```
 
-> Screenshot: `screenshots/alert01-[description].png`
+**Evidence:**
+<!-- Reference your screenshots folder -->
+> Screenshot: `screenshots/f01-[description].png`
 
-**Analyst Decision:** [Escalate / Monitor / Close — False Positive / Close — Resolved]
+**Impact:**
+<!-- What can an attacker actually do with this? Be specific. -->
 
-**Justification:**
-<!-- Why did you make this decision? What evidence drove it?
-     What would change your decision if you had more information? -->
+**Likelihood:**
+<!-- How easy is this to exploit? Is it exposed to the internet? Does it require authentication? -->
+
+**Risk Rating:** [Critical / High / Medium / Low]
+<!-- Justify: why this severity and not higher or lower? -->
+
+**Remediation:**
+<!-- Specific, actionable fix. Not "update your software." Tell them exactly what to change. -->
 
 ---
 
-## MITRE ATT&CK Mapping
+## Threat Model
 
-| Tactic | Technique | Technique ID | Observed Behavior | Evidence |
+<!-- What is the most realistic attack path an adversary would take against this target?
+     Map at least one complete attack chain using the format below. -->
+
+**Attack Chain:**
+```
+Initial Access → [technique] → [MITRE TID]
+Execution     → [technique] → [MITRE TID]
+Privilege Esc → [technique] → [MITRE TID]
+Impact        → [technique] → [MITRE TID]
+```
+
+> Diagram: `diagrams/threat-model.png` (required for Portfolio Grade and above)
+
+---
+
+## Risk Matrix
+
+| Finding | Likelihood (1-5) | Impact (1-5) | Risk Score | Priority |
 |---|---|---|---|---|
-| e.g. Initial Access | Phishing | T1566 | | |
-| e.g. Credential Access | Brute Force | T1110 | | |
-| e.g. Lateral Movement | Pass the Hash | T1550.002 | | |
-
-> Reference: [MITRE ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/)
-> Save navigator export as: `appendix/mitre-navigator-export.json`
+| F-01 | | | | Immediate |
+| F-02 | | | | High |
+| F-03 | | | | Medium |
 
 ---
 
-## Indicators of Compromise (IOCs)
+## Remediation Roadmap
 
-| Type | Value | Confidence | Source |
-|---|---|---|---|
-| IP Address | | High / Medium / Low | |
-| Domain | | | |
-| File Hash (MD5/SHA256) | | | |
-| Username | | | |
-| User-Agent | | | |
-
-<!-- Only include IOCs you actually identified during this investigation.
-     Leave table empty and note "No IOCs identified" if none found. -->
+| Priority | Finding | Recommended Fix | Effort | Owner |
+|---|---|---|---|---|
+| 1 — Immediate | F-01 | | Low / Medium / High | Dev / SecOps |
+| 2 — This Week | F-02 | | | |
+| 3 — This Month | F-03 | | | |
 
 ---
 
-## Visibility Gaps & Limitations
-<!-- What data was missing that would have helped this investigation?
-     What log sources were not available? What would you add to improve detection? -->
+## Tools Used
 
-**What was missing:**
-
-**How it affected the investigation:**
-
-**What I would add to improve detection:**
-
----
-
-## Escalation Recommendation
-
-**Decision:** [Escalate to Tier-2 / Monitor and Watch / Close — Resolved / Close — False Positive]
-
-**Severity Rating:** [Critical / High / Medium / Low / Informational]
-
-**Reason:**
-<!-- Write 3–5 sentences justifying your escalation decision as if handing this to a senior analyst. -->
-
-**Immediate Actions Required:**
-<!-- What should happen in the next hour? Next 24 hours? -->
-
-- [ ] Immediate (0–1 hour):
-- [ ] Short-term (1–24 hours):
-- [ ] Follow-up (24–72 hours):
-
----
-
-## Analyst Notes
-<!-- Raw working notes. What queries did you run? What dead ends did you hit?
-     What did you rule out and why? This section demonstrates your analytical thinking. -->
-
-**Queries run:**
-```
-[Paste SIEM/log queries you used]
-```
-
-**Dead ends:**
-
-**What I ruled out and why:**
+| Tool | Version | Purpose |
+|---|---|---|
+| | | |
+| | | |
 
 ---
 
 ## Key Lessons
-<!-- Answer these three questions specifically — not a summary of what you did: -->
+<!-- This is not a summary. Answer these three questions specifically:
+     1. What did you discover that surprised you or was not in the task instructions?
+     2. What would a professional consultant do differently than you did?
+     3. What would you look for next if you had more time? -->
 
-**What surprised me about this investigation:**
+**Surprise finding:**
 
-**What a senior analyst would do differently:**
+**What a professional would do differently:**
 
-**What I would monitor going forward if this were a real environment:**
+**What I would investigate next:**
 
 ---
 
 ## Loom Walkthrough
 <!-- MANDATORY for Portfolio Grade and Hall of Fame review requests.
-     Record yourself: walk through your timeline, explain your MITRE mapping,
-     justify your escalation decision. Show the actual SIEM/log data on screen. -->
+     Record yourself: demo the exploit live, explain your severity rating, walk through remediation. -->
 
-[▶ Watch investigation walkthrough](https://loom.com/share/REPLACE-WITH-YOUR-LINK)
+[▶ Watch verification walkthrough](https://loom.com/share/REPLACE-WITH-YOUR-LINK)
 
-> Loom must cover: (1) timeline walkthrough, (2) MITRE ATT&CK mapping explanation,
-> (3) escalation decision justification. Minimum: 10 minutes. Maximum: 25 minutes.
+> Loom must cover: (1) live exploit demo, (2) CVSS justification, (3) remediation explanation.
+> Minimum: 10 minutes. Maximum: 25 minutes.
 
 ---
 
 ## References
 
+- [OWASP](https://owasp.org)
 - [MITRE ATT&CK](https://attack.mitre.org)
-- [Sigma Rules](https://github.com/SigmaHQ/sigma)
-- [NIST IR Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
+- [NVD CVE](https://nvd.nist.gov)
 - [Add any resources you used]
 
 ---
 
 ## Submission Checklist
 
-- [ ] Event timeline built from actual log timestamps (not approximated)
-- [ ] MITRE ATT&CK mapping completed with Technique IDs
-- [ ] All screenshots annotated and referenced in the report
-- [ ] Escalation decision clearly justified
-- [ ] Analyst notes section completed (queries + dead ends)
+- [ ] All finding blocks completed with CVSS + OWASP
+- [ ] Screenshots annotated (red boxes, arrows, labels)
+- [ ] At least one diagram included
 - [ ] Loom walkthrough recorded and linked
+- [ ] Remediation is specific and actionable (not generic)
+- [ ] Executive summary uses non-technical language
 - [ ] Submitted on TMS with GitHub link + Loom link
